@@ -7,7 +7,12 @@ function circleArea(radius) {
   else if (isNaN(radius) != 'number') return false;
 };
 
-// Best solution
+// Best solutions
 var circleArea = function(radius) {
   return radius > 0 ? +(radius * radius * Math.PI).toFixed(2) : false;
+};
+
+var circleArea = function(radius) {
+  if (isNaN(radius) || radius <= 0) return false;
+  return Math.round(Math.PI * Math.pow(radius, 2) * 100) / 100;
 };
